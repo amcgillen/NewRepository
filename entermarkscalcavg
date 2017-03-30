@@ -1,0 +1,92 @@
+// Week 3 Assignment.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include "stdio.h"
+
+void main()
+{
+	int english = 0;
+	int french = 0;
+	int maths = 0;
+	int irish = 0;
+	int science = 0;
+	float avg = 0.0;
+	int highMark = 0;
+	int highSub = 0;
+
+
+	printf("Enter English Mark: ");
+		scanf_s("%d", &english );
+	
+	printf("Enter French Mark: ");
+		scanf_s("%d", &french );
+
+	printf("Enter Maths Mark: ");
+		scanf_s("%d", &maths );
+
+	printf("Enter Irish Mark: ");
+		scanf_s("%d", &irish );
+
+	printf("Enter Science Mark: ");
+		scanf_s("%d", &science );
+	
+	avg = (float)(english + french + maths + irish + science) / 5.0;
+
+	printf("\nAverage Mark = %.2f \n", avg);
+
+	
+	printf("Fails: ");
+	if (english < 40) printf("English, ");
+	if (french < 40) printf("French, ");
+	if (maths < 40) printf("Maths, ");
+	if (irish < 40) printf("Irish, ");
+	if (science < 40) printf("Science, ");
+
+	printf("\nPasses: ");
+	if (english >= 40) printf("English, ");
+	if (french >= 40) printf("French, ");
+	if (maths >= 40) printf("Maths, ");
+	if (irish >= 40) printf("Irish, ");
+	if (science >= 40) printf("Science, ");
+	
+	
+
+	if (english > highMark)
+	{
+		highMark = english;
+		highSub = 1;
+	}
+	if (french > highMark)
+	{
+		highMark = french;
+		highSub = 2;
+	}
+	if (maths > highMark)
+	{
+		highMark = maths;
+		highSub = 3;
+	}
+	if (irish > highMark)
+	{
+		highMark = irish;
+		highSub = 4;
+	}
+	if (science > highMark)
+	{
+		highMark = science;
+		highSub = 5;
+	}
+
+	printf("\nHighest Mark = %d \n", highMark);
+	
+	if (highSub == 1) printf("English is the highest, with a score of %d\n", english);
+
+	if (highSub == 2) printf("French is the highest, with a score of %d\n", french);
+
+	if (highSub == 3) printf("Math is the highest, with a score of %d\n", maths);
+
+	if (highSub == 4) printf("Irish is the highest, with a score of %d\n", irish);
+
+	if (highSub == 5) printf("Science is the highest, with a score of %d\n", science);
+}
