@@ -1,0 +1,60 @@
+// Assignment 7.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <string.h>
+
+
+void main()
+{
+	char names[10][51] = {"Robert Hudson", "Pam Patterson", "Jackie Hansen", "Renee Watson", "Geoffrey Woods", "Steven Steele", "Lila Higgins", "Tyler Carson", "Gilbert Torres", "Kelli Swanson" };
+	char firstNames[10][51];
+	char surnames[10][51];
+	int i = 0;
+	int j = 0;
+	int lastNameStarted = 0;
+	int x = 9;
+	int v = 0;
+
+
+	printf("FIRST NAMES:\n");
+	for (i = 0; i < 10; i++)
+	{
+
+		for (j = 0; names[i][j] != ' '; j++)
+		{
+			firstNames[i][j] = names[i][j];
+		}
+	firstNames[i][j] = '\0';	
+	printf("%s\n", firstNames[i]);
+	}
+	int count = 0;
+
+	printf("\n\nSURNAMES:\n");
+	for (i = 0; i < 10; i++)
+	{
+		lastNameStarted = 0;
+		for (j = 0; names[i][j] != '\0'; j++)
+		{
+			if (names[i][j] == ' ')
+			{
+				lastNameStarted = 1;
+				count = j+1;
+				continue;
+			}
+			if (lastNameStarted == 1)
+				surnames[i][j-count] = names[i][j];
+		}
+		surnames[i][j-count] = '\0';
+		printf("%s\n", surnames[i]);
+	}
+
+	printf("\n\nNEW NAMES:\n");
+	for (i = 0; i < 10; i++)
+	{
+		printf("%s %s\n", firstNames[v], surnames[x]);
+		v = v++;
+		x = x--;
+	}
+			
+	}
