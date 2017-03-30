@@ -1,0 +1,113 @@
+// Week 4 Assignment.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+
+#define Triangle 1
+#define Rectangle 2
+#define Trapezoid 3
+#define Ellipse 4
+#define Square 5
+#define Parallelogram 6
+#define Circle 7
+#define Sector 8
+
+
+void main()
+{
+
+	int shape = 1;
+	float area = 0.0;
+	float vheight = 0.0;
+	float height;
+	float width;
+	float sideLength;
+	float base;
+	float radius;
+	float majorRadius;
+	float minorRadius;
+	float circ;
+	float angle;
+	float baseWidth;
+	float topWidth;
+
+	printf("Area Calculator\nEnter Choice: \n 1 <Triangle>\n 2 <Rectangle>\n 3 <Trapezoid>\n 4 <Ellipse>\n 5 <Square>\n 6 <Parallelogram>\n 7 <Circle>\n 8 <Sector>\nChoice: ");
+	scanf_s("%d", &shape);
+
+	switch (shape)
+	{
+		case Triangle:
+			printf("Enter Base:");
+				scanf_s("%f", &base);
+			printf("Enter vertical height:");
+				scanf_s("%f", &vheight);
+			area = (.5) * base * vheight;
+				printf("\nArea = %.2f\n", area);
+		break;
+
+		case Rectangle:
+			printf("Enter width:");
+				scanf_s("%f", &width);
+			printf("Enter height:");
+				scanf_s("%f", &height);
+			area = width * height;
+			printf("Area = %.2f\n", area);
+		break;
+
+		case Trapezoid:
+			printf("Enter top width:");
+				scanf_s("%f", &topWidth);
+			printf("Enter base width:");
+				scanf_s("%f", &baseWidth);
+			printf("Enter vertical height:");
+				scanf_s("%f", &vheight);
+			area = (.5) * (topWidth + baseWidth) * vheight;
+			printf("Area = %.2f\n", area);
+		break;
+
+		case Ellipse:
+			printf("Enter major radius:");
+				scanf_s("%f", &majorRadius);
+			printf("Enter minor radius:");
+				scanf_s("%f", &minorRadius);
+			area = (3.14) * majorRadius * minorRadius;
+			printf("Area = %.2f\n", area);
+		break;
+
+		case Square:
+			printf("Enter length of one side:");
+				scanf_s("%f", &sideLength);
+			area = sideLength * sideLength;
+			printf("Area = %.2f\n", area);
+		break;
+
+		case Parallelogram:
+			printf("Enter base length:");
+				scanf_s("%f", &base);
+			printf("Enter vertical height:");
+				scanf_s("%f", &vheight);
+			area = base * vheight;
+			printf("Area = %.2f\n", area);
+		break;
+
+		case Circle:
+			printf("Enter radius:");
+				scanf_s("%f", &radius);
+			area = (3.14) * radius * radius;
+			printf("Area = %.2f\n", area);
+		break;
+
+		case Sector:
+			printf("Enter radius:");
+			scanf_s("%f", &radius);
+			printf("Enter angle in radians:");
+			scanf_s("%f", &angle);
+			area = (.5) * radius * radius * angle;
+			printf("Area = %.2f", area);
+		break;
+
+		default:
+			printf("That is not a valid number.\n");
+
+	}
+}
