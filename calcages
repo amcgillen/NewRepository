@@ -1,0 +1,55 @@
+// Assignment 5 pt2.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+
+
+void main()
+{
+
+	int i = 0;
+	int min;
+	int max;
+	int avg;
+	int Ages[10];
+	float sum = 0;
+	int j;
+
+	printf("Program to calculate average of up to 10 ages\n");
+	printf("Enter up to 10 ages <-1 to end input>\n");
+	printf("__________________________\n\n");
+
+	for (i = 0; i < 10; i++)
+	{
+		printf("#%d: ", i + 1);
+		scanf_s("%d", &Ages[i]);
+		if (Ages[i] != -1)
+		{
+			sum = sum + Ages[i];
+		}
+		else break;
+	}
+
+
+
+	avg = sum / i;
+
+	printf("\n\n\nAverage: %d\n", avg);
+
+	min = Ages[0];
+	max = Ages[0];
+	for (j = 0; j < i;j++)
+	{
+		if (Ages[j] > min)
+			min = Ages[j];
+		
+	}
+	for (j = 0; j < i; j++)
+	{
+		if (max > Ages[j])
+			max = Ages[j];
+	}
+	printf("Min: %d\n", min);
+	printf("Max: %d\n", max);
+
+}
